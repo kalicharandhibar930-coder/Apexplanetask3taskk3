@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApexPlanet - Advanced Web Systems</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Three.js CDN for 3D Wireframe Sphere -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <!-- 3D Background Canvas -->
+  <canvas id="sphere-canvas"></canvas>
+
+  <div class="app-wrapper">
+    <header class="cyber-header">
+      <div class="brand">
+        <span class="pulse-indicator"></span>
+        <h1>APEX<span>PLANET</span></h1>
+      </div>
+      <p class="subtitle">Responsive Systems • 3D Canvas • 5-Question Quiz • Real-time Weather Stream</p>
+    </header>
+
+    <main class="dashboard-grid">
+      <!-- TASK 2: 5-Question Interactive Quiz Component -->
+      <section class="glass-card quiz-card">
+        <div class="card-head">
+          <h2>Task 02: Knowledge Assessment</h2>
+          <span id="quiz-timer" class="badge">15s</span>
+        </div>
+        
+        <div id="quiz-box">
+          <div class="progress-bar">
+            <div id="quiz-progress" class="progress"></div>
+          </div>
+          <div class="question-tracker">
+            <span id="question-count">Question 1 of 5</span>
+          </div>
+          <p id="quiz-question" class="question-text">Loading prompt...</p>
+          <div id="quiz-options" class="options-container"></div>
+          <p id="quiz-feedback" class="feedback-msg"></p>
+        </div>
+
+        <div id="quiz-result" class="hidden">
+          <h3 class="success-glow">Assessment Completed!</h3>
+          <p id="final-score" class="score-display"></p>
+          <button id="retry-btn" class="cyber-btn">Retake Assessment</button>
+        </div>
+      </section>
+
+      <!-- TASK 3: Real-Time Weather & Temperature API Section -->
+      <section class="glass-card weather-card">
+        <div class="card-head">
+          <h2>Task 03: Live Climate Node</h2>
+          <span class="badge weather-badge">Open-Meteo API</span>
+        </div>
+        
+        <div class="filter-wrapper">
+          <label for="city-select">Select Location:</label>
+          <select id="city-select" class="cyber-select">
+            <option value="kolkata">Kolkata, India</option>
+            <option value="delhi">New Delhi, India</option>
+            <option value="london">London, UK</option>
+            <option value="tokyo">Tokyo, Japan</option>
+            <option value="newyork">New York, USA</option>
+          </select>
+        </div>
+
+        <div class="weather-dashboard">
+          <div class="temp-display">
+            <span id="weather-icon">🌤️</span>
+            <div class="temp-readout">
+              <span id="temp-value">--</span><span class="deg">°C</span>
+            </div>
+          </div>
+          <div class="weather-stats">
+            <div class="stat-item">
+              <span class="stat-label">Condition</span>
+              <span id="weather-cond" class="stat-val">Loading...</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Wind Speed</span>
+              <span id="wind-speed" class="stat-val">-- km/h</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Humidity</span>
+              <span id="humidity" class="stat-val">--%</span>
+            </div>
+          </div>
+        </div>
+
+        <button id="fetch-weather-btn" class="cyber-btn">Sync Telemetry</button>
+        <span id="weather-log" class="stream-log">Status: Initialized</span>
+      </section>
+
+      <!-- TASK 2 (Alternative): Responsive Carousel -->
+      <section class="glass-card carousel-card">
+        <div class="card-head">
+          <h2>Visual Asset Showcase</h2>
+          <span class="badge">Hardware Accelerated</span>
+        </div>
+
+        <div class="carousel-container">
+          <button id="prev-slide" class="nav-arrow left" aria-label="Previous">❮</button>
+          <div class="carousel-viewport">
+            <div id="carousel-track" class="carousel-track">
+              <div class="slide">
+                <img src="https://picsum.photos/id/1018/900/450" alt="Mountain Landscape" />
+                <div class="slide-caption">Deep Terrain Mapping</div>
+              </div>
+              <div class="slide">
+                <img src="https://picsum.photos/id/1015/900/450" alt="River in Canyon" />
+                <div class="slide-caption">Biosphere Hydrology</div>
+              </div>
+              <div class="slide">
+                <img src="https://picsum.photos/id/1019/900/450" alt="Ocean Coast" />
+                <div class="slide-caption">Atmospheric Edge Systems</div>
+              </div>
+            </div>
+          </div>
+          <button id="next-slide" class="nav-arrow right" aria-label="Next">❯</button>
+        </div>
+        
+        <div id="carousel-indicators" class="indicators">
+          <span class="indicator-dot active" data-index="0"></span>
+          <span class="indicator-dot" data-index="1"></span>
+          <span class="indicator-dot" data-index="2"></span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
